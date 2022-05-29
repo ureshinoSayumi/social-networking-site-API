@@ -39,9 +39,10 @@ const postController = {
 			console.log(createData.content, 'createData.content')
 			return appError(400, '單筆建立失敗，貼文內容必填', next)
 		}
-		if (!createData.user) {
-			return appError(400, '單筆建立失敗，使用者ID必填', next)
-		}
+		// 新增 JWT 後，直接由 auth 帶入 req.user.id
+		// if (!createData.user) {
+		// 	return appError(400, '單筆建立失敗，使用者ID必填', next)
+		// }
 		const checkUser = await User.findById(req.user.id).catch((err) => null)
 		if (checkUser === null) {
 			return appError(400, '單筆建立失敗，無此使用者ID', next)
@@ -57,20 +58,15 @@ const postController = {
 		if (!updateData.content) {
 			return appError(400, '單筆編輯失敗，貼文內容必填', next)
 		}
-		if (!updateData.user) {
-			return appError(400, '單筆編輯失敗，使用者ID必填', next)
-		}
-		if (req.user.id !== updateData.user) {
-			return appError(400, '無法編輯其他使用者貼文', next)
-		}
-		const checkUser = await User.findById(updateData.user).catch((err) => null)
+		// 新增 JWT 後，直接由 auth 帶入 req.user.id
+		// if (!updateData.user) {
+		// 	return appError(400, '單筆編輯失敗，使用者ID必填', next)
+		// }
+		const checkUser = await User.findById(req.user.id).catch((err) => null)
 		if (checkUser === null) {
 			return appError(400, '單筆編輯失敗，無此使用者ID', next)
 		}
-		// const newUser = await Post.find({id})
-		console.log(checkUser)
-		console.log(req.user.id, updateData.user)
-		const newPost = await Post.findByIdAndUpdate(id, updateData, { returnDocument: 'after' })
+		const newPost = await Post.findByIdAndUpdate(req.params.id, updateData, { returnDocument: 'after' })
 		if (newPost === null) {
 			return appError(400, '單筆編輯失敗，無此貼文ID', next)
 		}
