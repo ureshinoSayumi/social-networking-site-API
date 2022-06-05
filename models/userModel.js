@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -14,12 +14,12 @@ const userSchema = new mongoose.Schema({
   photo: String,
   sex:{
     type: String,
-    enum:["male","female"]
+    enum:["male", "female", "other"]
   },
   image: String,
   password:{
     type: String,
-    required: [true,'請輸入密碼'],
+    required: [true, '請輸入密碼'],
     minlength: 8,
     select: false
   },
@@ -27,16 +27,34 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
     select: false
-  }
+  },
+  followers: [
+    {
+      user: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'User'
+      },
+      createdAt: {
+        type: Date,
+        default: Date.now
+      }
+    }
+  ],
+  following: [
+    {
+      user: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'User'
+      },
+      createdAt: {
+        type: Date,
+        default: Date.now
+      }
+    }
+  ],
+  auth: String
 }, {versionKey: false})
 
-// const User_Schema = new mongoose.Schema(
-//   userSchema,
-//   {
-//     versionKey: false,
-//   }
-// )
+const User = mongoose.model('User', userSchema)
 
-const User = mongoose.model('User', userSchema);
-
-module.exports = User;
+module.exports = User

@@ -11,15 +11,15 @@ const appError = require('./service/appError')
 
 process.on('uncaughtException', err => {
   // 記錄錯誤下來，等到服務都處理完後，停掉該 process
-	console.error('Uncaughted Exception！')
-	console.error(err)
-	console.error(err.message)
-	console.error(err.stack)
+	// console.error('Uncaughted Exception！')
+	// console.error(err)
+	// console.error(err.message)
+	// console.error(err.stack)
 	process.exit(1)
 });
 // 未捕捉到的 catch 
 process.on('unhandledRejection', (reason, promise) => {
-  console.error('未捕捉到的 rejection：', promise, '原因：', reason);
+  // console.error('未捕捉到的 rejection：', promise, '原因：', reason);
   // 記錄於 log 上
 });
 
@@ -37,11 +37,10 @@ const DB = process.env.DATABASE.replace(
 // 連接資料庫
 mongoose.connect(DB)
 	.then(()=>{
-		console.log('是否開發者模式' ,process.env.NODE_ENV)
-		console.log('資料庫連線成功')
+		// console.log('是否開發者模式' ,process.env.NODE_ENV)
 	})
 	.catch((error)=>{
-		console.log(error);
+		// console.log(error);
 	});
 
 app.use(cors())
@@ -55,8 +54,7 @@ app.use('/', indexRouter);
 app.use(usersRouter);
 app.use(postsRouter);
 app.use(uploadRouter)
-// app.use('/posts', postsRouter);
-// 404
+
 app.use(function(req, res, next) {
 	appError(404, '404 無此路由', next)
 })
@@ -69,7 +67,7 @@ const resErrorProd = (err, res) => {
     });
   } else {
     // log 紀錄
-    console.error('出現重大錯誤', err);
+    // console.error('出現重大錯誤', err);
     // 送出罐頭預設訊息
     res.status(500).json({
       status: 'error',
@@ -102,4 +100,4 @@ app.use(function(err, req, res, next) {
 })
 
 module.exports = app;
-console.log('http://127.0.0.1:3005/');
+// console.log('http://127.0.0.1:3005/');
