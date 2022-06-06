@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "9bcc641c-102a-45dc-b4fb-bd57f626abb5",
-		"name": "week-7",
+		"name": "week-8",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -55,6 +55,30 @@
 					"response": []
 				},
 				{
+					"name": "刪除單一貼文",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwt}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/posts/62970db744d91d67d894ea28",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"posts",
+								"62970db744d91d67d894ea28"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "新增貼文",
 					"request": {
 						"method": "POST",
@@ -75,12 +99,45 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/post",
+							"raw": "{{url}}/posts",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"post"
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "編輯貼文",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwt}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"編輯測試2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/post/629d2cfb502d91edd19a58d3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"post",
+								"629d2cfb502d91edd19a58d3"
 							]
 						}
 					},
@@ -110,7 +167,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/posts?timeSort=asc&q=",
+							"raw": "{{url}}/posts?timeSort=&q=&page=1",
 							"host": [
 								"{{url}}"
 							],
@@ -120,11 +177,15 @@
 							"query": [
 								{
 									"key": "timeSort",
-									"value": "asc"
+									"value": ""
 								},
 								{
 									"key": "q",
 									"value": ""
+								},
+								{
+									"key": "page",
+									"value": "1"
 								}
 							]
 						}
@@ -132,9 +193,9 @@
 					"response": []
 				},
 				{
-					"name": "編輯貼文",
+					"name": "取得單一貼文",
 					"request": {
-						"method": "PATCH",
+						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
@@ -142,23 +203,39 @@
 								"type": "text"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"content\": \"testetstsetstsetststsett\",\r\n    \"image\": \"https://upload.cc/i1/2022/04/11/Qq25Hw.png\",\r\n    \"comments\": 8\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "{{url}}/post/62938cb4f9de18648fcb9237",
+							"raw": "{{url}}/posts/629d2cfb502d91edd19a58d3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"posts",
+								"629d2cfb502d91edd19a58d3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取得單一使用者貼文",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwt}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/post/user/62948417640547c956fb39ef",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"post",
-								"62938cb4f9de18648fcb9237"
+								"user",
+								"62948417640547c956fb39ef"
 							]
 						}
 					},
@@ -215,9 +292,9 @@
 					"response": []
 				},
 				{
-					"name": "取得單一貼文",
+					"name": "新增留言",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [
 							{
 								"key": "Authorization",
@@ -225,14 +302,92 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\": \"留言測試2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{url}}/post/62938cb4f9de18648fcb9237",
+							"raw": "{{url}}/posts/62970db744d91d67d894ea28/comment",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"post",
-								"62938cb4f9de18648fcb9237"
+								"posts",
+								"62970db744d91d67d894ea28",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "刪除留言",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwt2}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\": \"留言測試2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/posts/6297132c803bbfdc3509a390/comment",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"posts",
+								"6297132c803bbfdc3509a390",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "編輯留言",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwt}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\": \"留言測試2222\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/posts/629d9b22a1e6f48d4ea81203/comment",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"posts",
+								"629d9b22a1e6f48d4ea81203",
+								"comment"
 							]
 						}
 					},
@@ -247,7 +402,13 @@
 					"name": "取得所有user",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwt}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{url}}/users",
 							"host": [
@@ -261,13 +422,37 @@
 					"response": []
 				},
 				{
+					"name": "取得單一user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwt2}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/users/62948417640547c956fb39ef",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"62948417640547c956fb39ef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "註冊user",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"test2\",\r\n    \"email\": \"test2@gmail.com\",\r\n    \"photo\": \"test2\",\r\n    \"password\": \"testtest2\",\r\n    \"confirmPassword\": \"testtest2\"\r\n}",
+							"raw": "{\r\n    \"name\": \"七號\",\r\n    \"email\": \"l407vs09@gmail.com\",\r\n    \"password\": \"testtest2\",\r\n    \"confirmPassword\": \"testtest2\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -275,12 +460,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/sing_up",
+							"raw": "{{url}}/user/sign_up",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"sing_up"
+								"user",
+								"sign_up"
 							]
 						}
 					},
@@ -293,7 +479,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"l407v0@gmail.com\",\r\n    \"password\": \"zxc296331\"\r\n}",
+							"raw": "{\r\n    \"email\": \"l407v09@gmail.com\",\r\n    \"password\": \"zxc2963313\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -301,12 +487,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/sing_in",
+							"raw": "{{url}}/users/sign_in",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"sing_in"
+								"users",
+								"sign_in"
 							]
 						}
 					},
@@ -343,13 +530,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOGE0ZmMxZTEwZTNkODczMTNkZTNhNyIsImlhdCI6MTY1MzIzMTU2NSwiZXhwIjoxNjUzMzE3OTY1fQ.d_HXWRLL0xi_OHo0Y0B_VyuBhezVzwB4ausscuijsrQ",
+								"value": "{{jwt}}",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"confirmPassword\": \"123456789\",\r\n    \"password\": \"123456789\"\r\n}",
+							"raw": "{\r\n    \"confirmPassword\": \"zxc2963313\",\r\n    \"password\": \"zxc2963313\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -376,13 +563,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODRhY2ZiYjdiYjJkN2EyMjZlYzA2NCIsImlhdCI6MTY1MzI5NDMxMSwiZXhwIjoxNjUzMzgwNzExfQ.O7bwhfiHb0x8zUZtZqaXdxHGHesQ4YnzBGgJNleKb8w",
+								"value": "{{jwt}}",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"l407v09\",\r\n    \"sex\": \"male\",\r\n    \"image\": \"image\"\r\n}",
+							"raw": "{\r\n    \"name\": \"1號\",\r\n    \"sex\": \"male\",\r\n    \"image\": \"image\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -427,7 +614,7 @@
 					"response": []
 				},
 				{
-					"name": "取得單使用者貼文",
+					"name": "追蹤使用者",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -438,13 +625,63 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}/user/6285e6f824b9f4d7e2d58e64",
+							"raw": "{{url}}/users/6294846f640547c956fb3a11/follow",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"user",
-								"6285e6f824b9f4d7e2d58e64"
+								"users",
+								"6294846f640547c956fb3a11",
+								"follow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取消追蹤使用者",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwt}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/users/6294846f640547c956fb3a11/unfollow",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"6294846f640547c956fb3a11",
+								"unfollow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取得所有已追蹤",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwt}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/users/following",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"following"
 							]
 						}
 					},
