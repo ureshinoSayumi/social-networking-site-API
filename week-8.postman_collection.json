@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "9bcc641c-102a-45dc-b4fb-bd57f626abb5",
-		"name": "week-8",
+		"_postman_id": "98817f88-1ba5-47dd-b896-7d6aec8ad3db",
+		"name": "week-8 Copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -20,9 +20,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}/posts",
+							"raw": "https://ciye-social-site-api.herokuapp.com/posts",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"posts"
@@ -43,9 +46,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}/posts",
+							"raw": "https://ciye-social-site-api.herokuapp.com/posts",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"posts"
@@ -66,9 +72,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}/posts/62970db744d91d67d894ea28",
+							"raw": "https://ciye-social-site-api.herokuapp.com/posts/62970db744d91d67d894ea28",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"posts",
@@ -99,9 +108,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/posts",
+							"raw": "https://ciye-social-site-api.herokuapp.com/posts",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"posts"
@@ -131,9 +143,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/post/629d2cfb502d91edd19a58d3",
+							"raw": "https://ciye-social-site-api.herokuapp.com/post/629d2cfb502d91edd19a58d3",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"post",
@@ -167,9 +182,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/posts?timeSort=&q=&page=1",
+							"raw": "https://ciye-social-site-api.herokuapp.com/posts?timeSort=&q=&page=1",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"posts"
@@ -204,9 +222,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}/posts/629d2cfb502d91edd19a58d3",
+							"raw": "https://ciye-social-site-api.herokuapp.com/posts/629d2cfb502d91edd19a58d3",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"posts",
@@ -228,9 +249,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}/post/user/62948417640547c956fb39ef",
+							"raw": "https://ciye-social-site-api.herokuapp.com/post/user/62948417640547c956fb39ef",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"post",
@@ -253,9 +277,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}/post/62938cb4f9de18648fcb9237/likes",
+							"raw": "https://ciye-social-site-api.herokuapp.com/post/62938cb4f9de18648fcb9237/likes",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"post",
@@ -278,9 +305,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}/post/62938cb4f9de18648fcb9237/deleteLikes",
+							"raw": "https://ciye-social-site-api.herokuapp.com/post/62938cb4f9de18648fcb9237/deleteLikes",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"post",
@@ -312,9 +342,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/posts/62970db744d91d67d894ea28/comment",
+							"raw": "https://ciye-social-site-api.herokuapp.com/posts/62970db744d91d67d894ea28/comment",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"posts",
@@ -346,9 +379,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/posts/6297132c803bbfdc3509a390/comment",
+							"raw": "https://ciye-social-site-api.herokuapp.com/posts/6297132c803bbfdc3509a390/comment",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"posts",
@@ -380,9 +416,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/posts/629d9b22a1e6f48d4ea81203/comment",
+							"raw": "https://ciye-social-site-api.herokuapp.com/posts/629d9b22a1e6f48d4ea81203/comment",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"posts",
@@ -410,9 +449,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}/users",
+							"raw": "https://ciye-social-site-api.herokuapp.com/users",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"users"
@@ -433,9 +475,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}/users/62948417640547c956fb39ef",
+							"raw": "https://ciye-social-site-api.herokuapp.com/users/62948417640547c956fb39ef",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"users",
@@ -460,9 +505,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/user/sign_up",
+							"raw": "https://ciye-social-site-api.herokuapp.com/user/sign_up",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"user",
@@ -479,7 +527,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"l407v09@gmail.com\",\r\n    \"password\": \"zxc2963313\"\r\n}",
+							"raw": "{\r\n    \"email\": \"asdasdad@gmail.com\",\r\n    \"password\": \"zdasd9as65873\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -487,9 +535,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/users/sign_in",
+							"raw": "https://ciye-social-site-api.herokuapp.com/users/sign_in",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"users",
@@ -511,9 +562,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}/users/profile",
+							"raw": "https://ciye-social-site-api.herokuapp.com/users/profile",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"users",
@@ -544,9 +598,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/users/updatePassword",
+							"raw": "https://ciye-social-site-api.herokuapp.com/users/updatePassword",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"users",
@@ -577,9 +634,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/users/updateProfile",
+							"raw": "https://ciye-social-site-api.herokuapp.com/users/updateProfile",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"users",
@@ -601,9 +661,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}/users/getLikeList",
+							"raw": "https://ciye-social-site-api.herokuapp.com/users/getLikeList",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"users",
@@ -625,9 +688,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}/users/6294846f640547c956fb3a11/follow",
+							"raw": "https://ciye-social-site-api.herokuapp.com/users/6294846f640547c956fb3a11/follow",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"users",
@@ -650,9 +716,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}/users/6294846f640547c956fb3a11/unfollow",
+							"raw": "https://ciye-social-site-api.herokuapp.com/users/6294846f640547c956fb3a11/unfollow",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"users",
@@ -675,9 +744,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}/users/following",
+							"raw": "https://ciye-social-site-api.herokuapp.com/users/following",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"users",
@@ -714,9 +786,12 @@
 							]
 						},
 						"url": {
-							"raw": "{{url}}/upload",
+							"raw": "https://ciye-social-site-api.herokuapp.com/upload",
+							"protocol": "https",
 							"host": [
-								"{{url}}"
+								"ciye-social-site-api",
+								"herokuapp",
+								"com"
 							],
 							"path": [
 								"upload"
